@@ -2,6 +2,7 @@ package Galli.ProyectoExamenTecnico.Menu.grouper;
 
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 
 import Galli.ProyectoExamenTecnico.Menu.MenuInformation;
 import Galli.ProyectoExamenTecnico.Menu.MenuList;
@@ -17,6 +18,7 @@ public class MenuGrouper {
 	private MenuList menuList;
 
 	public MenuGrouper(MenuList menuList) {
+		Optional.of(menuList);
 		this.menuList = menuList;
 	}
 

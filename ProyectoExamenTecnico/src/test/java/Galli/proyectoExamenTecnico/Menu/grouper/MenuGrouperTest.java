@@ -34,6 +34,15 @@ public class MenuGrouperTest {
 	}
 
 	/**
+	 * Este metodo prueba que al intentar crear un MenuGrouper con un MenuList
+	 * nula entonces se lanza la excepcion NullPointerException.
+	 */
+	@Test(expected = NullPointerException.class)
+	public void createMenuGrouperWithNullMenuList() {
+		new MenuGrouper(null);
+	}
+
+	/**
 	 * Este metodo va a agrupar a la lista de menus por precio. Deberia dar 2
 	 * elementos con precio 10, 1 con 15 y 1 con 12.
 	 */

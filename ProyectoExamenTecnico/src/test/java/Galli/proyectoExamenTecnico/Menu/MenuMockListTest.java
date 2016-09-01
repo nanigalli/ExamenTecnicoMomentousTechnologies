@@ -22,14 +22,13 @@ import Galli.ProyectoExamenTecnico.Menu.MenuList;
  */
 public class MenuMockListTest {
 
-	private MenuList menuList = new MenuMockList();
+	private List<MenuInformation> list = new MenuMockList().getList();
 
 	/**
 	 * Se prueba que tenga los menus que se crearon en la clase.
 	 */
 	@Test
 	public void testGetName() {
-		List<MenuInformation> list = menuList.getList();
 		assertTrue(list.get(0).getName().equals("Menu1"));
 		assertTrue(list.get(1).getName().equals("Menu2"));
 		assertTrue(list.get(2).getName().equals("Menu3"));
@@ -41,7 +40,6 @@ public class MenuMockListTest {
 	 */
 	@Test
 	public void testGetPrice() {
-		List<MenuInformation> list = menuList.getList();
 		NumberFormat price = NumberFormat.getCurrencyInstance(Locale.US);
 		assertTrue(list.get(0).getPrice().equals(price.format(10)));
 		assertTrue(list.get(1).getPrice().equals(price.format(15)));
@@ -54,7 +52,6 @@ public class MenuMockListTest {
 	 */
 	@Test
 	public void testGetFromDay() {
-		List<MenuInformation> list = menuList.getList();
 		SimpleDateFormat date = new SimpleDateFormat("yyyy-MM-dd");
 		try {
 			assertTrue(list.get(0).getFromDay()
