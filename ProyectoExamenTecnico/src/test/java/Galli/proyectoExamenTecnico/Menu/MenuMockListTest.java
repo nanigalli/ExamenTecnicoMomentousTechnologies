@@ -20,9 +20,9 @@ import Galli.ProyectoExamenTecnico.Menu.MenuList;
  * @author Galli
  *
  */
-public class MenuListTestTest {
+public class MenuMockListTest {
 
-	private MenuList menuList = new MenuListTest();
+	private MenuList menuList = new MenuMockList();
 
 	/**
 	 * Se prueba que tenga los menus que se crearon en la clase.

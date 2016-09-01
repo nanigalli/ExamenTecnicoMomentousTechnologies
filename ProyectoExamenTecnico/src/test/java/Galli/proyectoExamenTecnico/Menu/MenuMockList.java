@@ -20,7 +20,7 @@ import Galli.ProyectoExamenTecnico.Menu.MenuList;
  * @author Galli
  *
  */
-public class MenuListTest implements MenuList {
+public class MenuMockList implements MenuList {
 
 	public List<MenuInformation> getList() {
 		List<MenuInformation> list = new ArrayList<MenuInformation>();

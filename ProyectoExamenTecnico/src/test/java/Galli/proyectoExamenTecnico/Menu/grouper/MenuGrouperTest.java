@@ -1,6 +1,7 @@
 package Galli.proyectoExamenTecnico.Menu.grouper;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 import java.text.NumberFormat;
 import java.util.List;
@@ -12,26 +13,24 @@ import org.junit.Test;
 
 import Galli.ProyectoExamenTecnico.Menu.MenuInformation;
 import Galli.ProyectoExamenTecnico.Menu.MenuList;
-import Galli.ProyectoExamenTecnico.Menu.grouper.Grouper;
-import Galli.ProyectoExamenTecnico.Menu.grouper.PriceGrouper;
+import Galli.ProyectoExamenTecnico.Menu.grouper.MenuGrouper;
 import Galli.proyectoExamenTecnico.Menu.MenuMockList;
 
 /**
- * Esta clase sirve para hacer las pruebas para agrupar los menu por precios.
+ * Esta clase prueba el MenuGrouper a la hora de agrupar los menu por precio.
  * 
  * @author Galli
  *
  */
-public class PriceGrouperTest {
+public class MenuGrouperTest {
 
 	private Map<String, List<MenuInformation>> menus;
 
 	@Before
 	public void setUp() {
 		MenuList menuList = new MenuMockList();
-		List<MenuInformation> list = menuList.getList();
-		Grouper grouper = new PriceGrouper();
-		menus = list.stream().collect((grouper.group()));
+		MenuGrouper menuGrouper = new MenuGrouper(menuList);
+		menus = menuGrouper.getListGroupedByPrice();
 	}
 
 	/**
@@ -71,4 +70,5 @@ public class PriceGrouperTest {
 		assertEquals(list.size(), 1);
 		assertEquals(list.get(0).getName(), "Menu4");
 	}
+
 }
