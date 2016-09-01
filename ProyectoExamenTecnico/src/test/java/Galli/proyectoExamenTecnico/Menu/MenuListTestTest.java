@@ -11,11 +11,22 @@ import java.util.Locale;
 import org.junit.Test;
 
 import Galli.ProyectoExamenTecnico.Menu.MenuInformation;
+import Galli.ProyectoExamenTecnico.Menu.MenuList;
 
+/**
+ * Esta clase sirve para probar que los mocks se crearon en la clase
+ * MenuListTest.
+ * 
+ * @author Galli
+ *
+ */
 public class MenuListTestTest {
 
-	private MenuListTest menuList = new MenuListTest();
+	private MenuList menuList = new MenuListTest();
 
+	/**
+	 * Se prueba que tenga los menus que se crearon en la clase.
+	 */
 	@Test
 	public void testGetName() {
 		List<MenuInformation> list = menuList.getList();
@@ -25,6 +36,9 @@ public class MenuListTestTest {
 		assertTrue(list.get(3).getName().equals("Menu4"));
 	}
 
+	/**
+	 * Se prueba que se hayan almacenado bien los precios de los menus.
+	 */
 	@Test
 	public void testGetPrice() {
 		List<MenuInformation> list = menuList.getList();
@@ -35,6 +49,9 @@ public class MenuListTestTest {
 		assertTrue(list.get(3).getPrice().equals(price.format(12)));
 	}
 
+	/**
+	 * Se prueba que las fechas se hayan creado correctamente.
+	 */
 	@Test
 	public void testGetFromDay() {
 		List<MenuInformation> list = menuList.getList();

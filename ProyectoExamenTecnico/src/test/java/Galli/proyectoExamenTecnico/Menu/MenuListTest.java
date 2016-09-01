@@ -8,17 +8,18 @@ import java.util.Date;
 import java.util.List;
 import java.util.Locale;
 
-import org.junit.runner.RunWith;
-
 import static org.mockito.Mockito.*;
-
-import org.mockito.runners.MockitoJUnitRunner;
 
 import Galli.ProyectoExamenTecnico.Menu.MenuInformation;
 import Galli.ProyectoExamenTecnico.Menu.MenuList;
 
-/*Esta clase simula la obtencion de los menus con la informacion necesaria de cada uno de ellos.*/
-@RunWith(MockitoJUnitRunner.class)
+/**
+ * Esta clase simula la obtencion de los menus con la informacion necesaria de
+ * cada uno de ellos.
+ * 
+ * @author Galli
+ *
+ */
 public class MenuListTest implements MenuList {
 
 	public List<MenuInformation> getList() {
@@ -47,6 +48,30 @@ public class MenuListTest implements MenuList {
 		return list;
 	}
 
+	/**
+	 * Este metodo sirve para crear un mock de un menu con la informacion que se
+	 * pasa por parametro.
+	 * 
+	 * @param name
+	 *            : nombre del menu.
+	 * @param description
+	 *            : descripcion del menu.
+	 * @param price
+	 *            : precio del menu.
+	 * @param addressPhoto
+	 *            : direccion de la foto.
+	 * @param fromDate
+	 *            : fecha en que entra en vigencia el menu.
+	 * @param untilDay
+	 *            : fecha limite de la vigencia del menu.
+	 * @param effectiveTime
+	 *            : horario en el que esta vigente el menu.
+	 * @param ranking
+	 *            : ranking del menu.
+	 * @param avaliableDays
+	 *            : dias habiles del menu.
+	 * @return un mock de un menu.
+	 */
 	private MenuInformation createMenu(String name, String description,
 			String price, String addressPhoto, Date fromDate, Date untilDay,
 			String effectiveTime, double ranking, String avaliableDays) {

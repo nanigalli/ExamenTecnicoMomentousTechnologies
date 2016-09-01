@@ -2,7 +2,12 @@ package Galli.ProyectoExamenTecnico.Menu;
 
 import java.util.Date;
 
-/*Esta interfaz sirve para obtener los datos de un menu.*/
+/**
+ * Esta interfaz sirve para obtener los datos de un menu.
+ * 
+ * @author Galli
+ *
+ */
 public interface MenuInformation {
 
 	public String getName();
