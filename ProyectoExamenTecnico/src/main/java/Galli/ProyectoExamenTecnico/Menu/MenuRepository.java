@@ -8,7 +8,7 @@ import java.util.List;
  * @author Galli
  *
  */
-public interface MenuList {
+public interface MenuRepository {
 
 	public List<MenuInformation> getList();
 

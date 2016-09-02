@@ -1,10 +1,10 @@
 package Galli.ProyectoExamenTecnico.Menu.grouper;
 
+import Galli.ProyectoExamenTecnico.Menu.MenuInformation;
+
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collector;
-
-import Galli.ProyectoExamenTecnico.Menu.MenuInformation;
 
 /**
  * Esta interfaz la van a implementar las clases para armar los diferentes criterios de agrupamiento

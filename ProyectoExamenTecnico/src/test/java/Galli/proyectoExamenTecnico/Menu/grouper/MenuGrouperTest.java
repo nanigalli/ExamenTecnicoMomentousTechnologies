@@ -2,6 +2,8 @@ package Galli.proyectoExamenTecnico.Menu.grouper;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
+import Galli.ProyectoExamenTecnico.Menu.MenuInformation;
+import Galli.ProyectoExamenTecnico.Menu.MenuRepository;
 
 import java.text.NumberFormat;
 import java.util.List;
@@ -11,10 +13,8 @@ import java.util.Map;
 import org.junit.Before;
 import org.junit.Test;
 
-import Galli.ProyectoExamenTecnico.Menu.MenuInformation;
-import Galli.ProyectoExamenTecnico.Menu.MenuList;
 import Galli.ProyectoExamenTecnico.Menu.grouper.MenuGrouper;
-import Galli.proyectoExamenTecnico.Menu.MenuMockList;
+import Galli.proyectoExamenTecnico.Menu.MockMenuRepository;
 
 /**
  * Esta clase prueba el MenuGrouper a la hora de agrupar los menu por precio.
@@ -28,7 +28,7 @@ public class MenuGrouperTest {
 
 	@Before
 	public void setUp() {
-		MenuList menuList = new MenuMockList();
+		MenuRepository menuList = new MockMenuRepository();
 		MenuGrouper menuGrouper = new MenuGrouper(menuList);
 		menus = menuGrouper.getListGroupedByPrice();
 	}

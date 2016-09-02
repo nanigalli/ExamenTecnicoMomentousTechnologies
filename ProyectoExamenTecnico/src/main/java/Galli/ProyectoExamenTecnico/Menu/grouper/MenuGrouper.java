@@ -1,11 +1,11 @@
 package Galli.ProyectoExamenTecnico.Menu.grouper;
 
+import Galli.ProyectoExamenTecnico.Menu.MenuInformation;
+import Galli.ProyectoExamenTecnico.Menu.MenuRepository;
+
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
-
-import Galli.ProyectoExamenTecnico.Menu.MenuInformation;
-import Galli.ProyectoExamenTecnico.Menu.MenuList;
 
 /**
  * Esta clase devuelve los menus agrupados por alguna condicion.
@@ -15,9 +15,9 @@ import Galli.ProyectoExamenTecnico.Menu.MenuList;
  */
 public class MenuGrouper {
 
-	private MenuList menuList;
+	private MenuRepository menuList;
 
-	public MenuGrouper(MenuList menuList) {
+	public MenuGrouper(MenuRepository menuList) {
 		Optional.of(menuList);
 		this.menuList = menuList;
 	}

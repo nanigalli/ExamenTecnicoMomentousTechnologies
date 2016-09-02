@@ -1,6 +1,7 @@
 package Galli.proyectoExamenTecnico.Menu;
 
 import static org.junit.Assert.*;
+import Galli.ProyectoExamenTecnico.Menu.MenuInformation;
 
 import java.text.NumberFormat;
 import java.text.ParseException;
@@ -10,9 +11,6 @@ import java.util.Locale;
 
 import org.junit.Test;
 
-import Galli.ProyectoExamenTecnico.Menu.MenuInformation;
-import Galli.ProyectoExamenTecnico.Menu.MenuList;
-
 /**
  * Esta clase sirve para probar que los mocks se crearon en la clase
  * MenuListTest.
@@ -20,9 +18,9 @@ import Galli.ProyectoExamenTecnico.Menu.MenuList;
  * @author Galli
  *
  */
-public class MenuMockListTest {
+public class MockMenuRpositoryTest {
 
-	private List<MenuInformation> list = new MenuMockList().getList();
+	private List<MenuInformation> list = new MockMenuRepository().getList();
 
 	/**
 	 * Se prueba que tenga los menus que se crearon en la clase.

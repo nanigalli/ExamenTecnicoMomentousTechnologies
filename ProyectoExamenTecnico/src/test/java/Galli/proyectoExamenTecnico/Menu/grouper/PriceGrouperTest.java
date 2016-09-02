@@ -1,6 +1,8 @@
 package Galli.proyectoExamenTecnico.Menu.grouper;
 
 import static org.junit.Assert.*;
+import Galli.ProyectoExamenTecnico.Menu.MenuInformation;
+import Galli.ProyectoExamenTecnico.Menu.MenuRepository;
 
 import java.text.NumberFormat;
 import java.util.List;
@@ -9,12 +11,13 @@ import java.util.Map;
 
 import org.junit.Before;
 import org.junit.Test;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
-import Galli.ProyectoExamenTecnico.Menu.MenuInformation;
-import Galli.ProyectoExamenTecnico.Menu.MenuList;
 import Galli.ProyectoExamenTecnico.Menu.grouper.Grouper;
 import Galli.ProyectoExamenTecnico.Menu.grouper.PriceGrouper;
-import Galli.proyectoExamenTecnico.Menu.MenuMockList;
+import Galli.ProyectoExamenTecnico.config.AppConfig;
+import Galli.proyectoExamenTecnico.Menu.MockMenuRepository;
 
 /**
  * Esta clase sirve para hacer las pruebas para agrupar los menu por precios.
@@ -28,7 +31,8 @@ public class PriceGrouperTest {
 
 	@Before
 	public void setUp() {
-		MenuList menuList = new MenuMockList();
+		ApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
+		MenuRepository menuList = (MenuRepository) context.getBean("menuList");;
 		List<MenuInformation> list = menuList.getList();
 		Grouper grouper = new PriceGrouper();
 		menus = list.stream().collect((grouper.group()));

@@ -1,5 +1,8 @@
 package Galli.proyectoExamenTecnico.Menu;
 
+import Galli.ProyectoExamenTecnico.Menu.MenuInformation;
+import Galli.ProyectoExamenTecnico.Menu.MenuRepository;
+
 import java.text.NumberFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -8,10 +11,9 @@ import java.util.Date;
 import java.util.List;
 import java.util.Locale;
 
-import static org.mockito.Mockito.*;
+import org.springframework.stereotype.Repository;
 
-import Galli.ProyectoExamenTecnico.Menu.MenuInformation;
-import Galli.ProyectoExamenTecnico.Menu.MenuList;
+import static org.mockito.Mockito.*;
 
 /**
  * Esta clase simula la obtencion de los menus con la informacion necesaria de
@@ -20,8 +22,10 @@ import Galli.ProyectoExamenTecnico.Menu.MenuList;
  * @author Galli
  *
  */
-public class MenuMockList implements MenuList {
+@Repository
+public class MockMenuRepository implements MenuRepository {
 
+	@Override
 	public List<MenuInformation> getList() {
 		List<MenuInformation> list = new ArrayList<MenuInformation>();
 		NumberFormat price = NumberFormat.getCurrencyInstance(Locale.US);
