@@ -2,6 +2,9 @@ package Galli.proyectoExamenTecnico.Menu;
 
 import static org.junit.Assert.*;
 import Galli.ProyectoExamenTecnico.Menu.MenuInformation;
+import Galli.ProyectoExamenTecnico.Menu.MenuRepository;
+import Galli.ProyectoExamenTecnico.Menu.grouper.MenuGrouper;
+import Galli.ProyectoExamenTecnico.config.AppConfig;
 
 import java.text.NumberFormat;
 import java.text.ParseException;
@@ -9,7 +12,10 @@ import java.text.SimpleDateFormat;
 import java.util.List;
 import java.util.Locale;
 
+import org.junit.Before;
 import org.junit.Test;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 /**
  * Esta clase sirve para probar que los mocks se crearon en la clase
@@ -18,9 +24,18 @@ import org.junit.Test;
  * @author Galli
  *
  */
-public class MockMenuRpositoryTest {
+public class MockMenuRepositoryTest {
 
-	private List<MenuInformation> list = new MockMenuRepository().getList();
+	private List<MenuInformation> list;
+
+	@Before
+	public void setUp() {
+		ApplicationContext context = new AnnotationConfigApplicationContext(
+				AppConfig.class);
+		MenuRepository menuRepository = (MenuRepository) context
+				.getBean("menuRepository");
+		list = menuRepository.getList();
+	}
 
 	/**
 	 * Se prueba que tenga los menus que se crearon en la clase.

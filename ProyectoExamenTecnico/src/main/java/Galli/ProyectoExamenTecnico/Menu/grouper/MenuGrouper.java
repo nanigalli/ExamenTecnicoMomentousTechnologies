@@ -7,6 +7,9 @@ import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+
 /**
  * Esta clase devuelve los menus agrupados por alguna condicion.
  * 
@@ -17,7 +20,8 @@ public class MenuGrouper {
 
 	private MenuRepository menuList;
 
-	public MenuGrouper(MenuRepository menuList) {
+	@Autowired
+	public MenuGrouper(@Qualifier("menuList") MenuRepository menuList) {
 		Optional.of(menuList);
 		this.menuList = menuList;
 	}

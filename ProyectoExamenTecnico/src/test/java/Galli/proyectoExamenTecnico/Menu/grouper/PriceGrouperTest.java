@@ -31,8 +31,10 @@ public class PriceGrouperTest {
 
 	@Before
 	public void setUp() {
-		ApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
-		MenuRepository menuList = (MenuRepository) context.getBean("menuList");;
+		ApplicationContext context = new AnnotationConfigApplicationContext(
+				AppConfig.class);
+		MenuRepository menuList = (MenuRepository) context
+				.getBean("menuRepository");
 		List<MenuInformation> list = menuList.getList();
 		Grouper grouper = new PriceGrouper();
 		menus = list.stream().collect((grouper.group()));

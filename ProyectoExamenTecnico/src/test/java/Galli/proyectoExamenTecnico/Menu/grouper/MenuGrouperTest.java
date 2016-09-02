@@ -12,8 +12,12 @@ import java.util.Map;
 
 import org.junit.Before;
 import org.junit.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 import Galli.ProyectoExamenTecnico.Menu.grouper.MenuGrouper;
+import Galli.ProyectoExamenTecnico.config.AppConfig;
 import Galli.proyectoExamenTecnico.Menu.MockMenuRepository;
 
 /**
@@ -28,8 +32,9 @@ public class MenuGrouperTest {
 
 	@Before
 	public void setUp() {
-		MenuRepository menuList = new MockMenuRepository();
-		MenuGrouper menuGrouper = new MenuGrouper(menuList);
+		ApplicationContext context = new AnnotationConfigApplicationContext(
+				AppConfig.class);
+		MenuGrouper menuGrouper = (MenuGrouper) context.getBean("menuGrouper");
 		menus = menuGrouper.getListGroupedByPrice();
 	}
 
